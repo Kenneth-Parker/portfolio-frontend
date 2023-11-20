@@ -10,9 +10,10 @@ const CoatDetails = () => {
     name: "",
     brand: "",
     type: "",
-    price: 0,
-    isFavorite: false,
-    rating: 5,
+    size: 0,
+    is_used: false,
+    is_available: "",
+    condition_rating: 5,
     image_url: "",
   });
 
@@ -56,7 +57,7 @@ const CoatDetails = () => {
   return (
     <div className="coat-details">
         <>
-          <h3>{coats.is_favorite ? "⭐️" : null} {coats.name}</h3>
+          <h3>{coats.is_available ? "✅" : null} {coats.name}</h3>
           <img
             src={coats.image_url}
             alt="coats Image"
@@ -64,8 +65,8 @@ const CoatDetails = () => {
           />
           <p>Brand: {coats.brand}</p>
           <p>Type: {coats.type}</p>
-          <p>Price: ${coats.price}</p>
-          <p>Rating: {coats.rating}</p>
+          <p>Size: {coats.size}</p>
+          <p>Condition: {coats.condition_rating}</p>
           <div>
             <Link to={`/coats`}><button>Back</button></Link>
             <Link to={`/coats/${id}/edit`}><button>Edit</button></Link>
