@@ -18,8 +18,10 @@ function DisplayCoats({ coats }) {
                 alt="coat Image"
                 style={{ width: '75px', height: 'auto' }}
               />
-              <br />  {coat.name}: {coat.is_available}
+              <br />  {coat.name}: {coat.is_available ? "✅" : null} 
             </Link>
+            <br />
+            {coat.city},{coat.state}
             <br />
             <br />
           </li>
@@ -35,7 +37,7 @@ function Index() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`${API}/coats`);
+        const response = await fetch(`${API}/coats/all`);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
