@@ -9,15 +9,15 @@ import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
 
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/Navbar";
 
 function App() {
 
 
   return (
-    <div className="App section-with-background">
+    <div>
       <Router>
-       <div className="NavBar" ><NavBar /></div> 
+       <div><NavBar /></div> 
         <main>
           <Routes>
           <Route path="/" element={<Home />} />

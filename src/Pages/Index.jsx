@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import "./Index.css"
 
 const API = import.meta.env.VITE_APP_URL;
-// const API = import.meta.env.VITE_PORT;
+
 
 function DisplayCoats({ coats }) {
   return (
     <div>
-      {/* <h2>Coats</h2> */}
+
       <ul>
         {coats.map((coat) => (
           <li key={coat.id}>

@@ -1,9 +1,9 @@
-import CoatDetails from "../Components/CoatDetails";
+import CoatDetails from "../Components/coatDetails";
 import './Show.css';
 
 function Show() {
   return (
-    <div className="show-details">
+    <div>
     <CoatDetails />
     </div>
   );

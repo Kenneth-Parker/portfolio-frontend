@@ -3,18 +3,22 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import "./CoatDetails.css"
 
 const API = import.meta.env.VITE_APP_URL;
-// const API = import.meta.env.VITE_PORT;
+
 
 const CoatDetails = () => {
   const [coats, setCoats] = useState({
     name: "",
     brand: "",
     type: "",
-    size: 0,
+    size: "",
     is_used: false,
-    is_available: "",
+    is_available: true,
     condition_rating: 5,
     image_url: "",
+    location_name: "",
+    city: "",
+    state: "",
+    zip_code: ""
   });
 
   const { id } = useParams();
@@ -23,7 +27,7 @@ const CoatDetails = () => {
   useEffect(() => {
     const fetchCoat = async () => {
       try {
-        fetch(`${API}/coats/${id}`)
+        fetch(`${API}/coats/all/${id}`)
           .then((r) => r.json())
           .then((res) => {
             setCoats(res);
@@ -37,7 +41,7 @@ const CoatDetails = () => {
 
   const handleDelete = () => {
     const isConfirmed = window.confirm(
-      "👀 Are u sure u want to delete this jawn?"
+      "Are you positive you want to remove this Coat"
     );
     if (isConfirmed) {
       try {
@@ -48,7 +52,6 @@ const CoatDetails = () => {
         return err;
       }
     } else {
-      // User clicked NeverMind, do nothing or show a message
       console.log("Deletion canceled by user");
     }
   };

@@ -17,7 +17,7 @@ function Coat({ coat }) {
         <h2><Link to={`/coats/${coat.id}`}>{coat.name}</Link></h2>
         <p><strong>Brand:</strong> {coat.brand}</p>
         <p><strong>Type:</strong> {coat.type}</p>
-        <p><strong>Price:</strong> ${coat.price}</p>
+        <p><strong>Size:</strong> ${coat.size}</p>
         <p><strong>Rating:</strong> {coat.condition_rating}</p>
       </div>
       <div className="coat-rating" style={backgroundColor}>

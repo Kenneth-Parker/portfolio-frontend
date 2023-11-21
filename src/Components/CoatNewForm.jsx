@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const API = import.meta.env.VITE_APP_URL;
-// const API = import.meta.env.VITE_PORT;
 
 function CoatNewForm() {
   const navigate = useNavigate();
@@ -10,25 +9,38 @@ function CoatNewForm() {
     name: "",
     brand: "",
     type: "",
-    price: 0,
-    is_favorite: false,
-    rating: 5,
+    size: "",
+    is_used: false,
+    is_available: true,
+    condition_rating: 5,
     image_url: "",
+    location_id: "", 
   });
 
-  // Add a coat. Redirect to the index view.
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    // Fetch Locations Data
+    fetch(`${API}/locations`)
+      .then((res) => res.json())
+      .then((res) => setLocations(res));
+  }, []);
+
   const addCoat = () => {
     const coatData = {
       name: coat.name,
       brand: coat.brand,
       type: coat.type,
-      price: coat.price,
-      is_favorite: coat.is_favorite,
-      rating: coat.rating,
+      size: coat.size,
+      is_used: coat.is_used,
+      is_available: coat.is_available,
+      condition_rating: coat.condition_rating,
       image_url: coat.image_url,
+      location_id: coat.location_id,
     };
+
     try {
-      fetch(`${API}/coats`, {
+      fetch(`${API}/coats/all`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,8 +58,12 @@ function CoatNewForm() {
     setCoat({ ...coat, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
-    setCoat({ ...coat, is_favorite: !coat.is_favorite });
+  const handleCheckboxChange = (event) => {
+    setCoat({ ...coat, [event.target.id]: event.target.checked });
+  };
+
+  const handleLocationChange = (event) => {
+    setCoat({ ...coat, location_id: event.target.value });
   };
 
   const handleSubmit = (event) => {
@@ -56,7 +72,7 @@ function CoatNewForm() {
   };
 
   return (
-    <div className="New">
+    <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
@@ -88,38 +104,59 @@ function CoatNewForm() {
           required
         />
 
-        <label htmlFor="price">Price:</label>
+        <label htmlFor="size">Size:</label>
         <input
-          id="price"
-          value={coat.price}
-          type="number"
-          min="0"
-          step="0.01"
+          id="size"
+          value={coat.size}
+          type="text"
           onChange={handleTextChange}
-          placeholder="Price of Coat"
+          placeholder="Size of Coat"
           required
         />
 
-        <label htmlFor="is_favorite">Favorite:</label>
+        <label htmlFor="is_used">Used:</label>
         <input
-          id="is_favorite"
+          id="is_used"
           type="checkbox"
           onChange={handleCheckboxChange}
-          checked={coat.is_favorite}
+          checked={coat.is_used}
         />
 
-        <label htmlFor="rating">Rating:</label>
+        <label htmlFor="is_available">Available:</label>
         <input
-          id="rating"
-          value={coat.rating}
+          id="is_available"
+          type="checkbox"
+          onChange={handleCheckboxChange}
+          checked={coat.is_available}
+        />
+
+        <label htmlFor="condition_rating">Condition Rating:</label>
+        <input
+          id="condition_rating"
+          value={coat.condition_rating}
           type="number"
           min="0"
           max="5"
           step="1"
           onChange={handleTextChange}
-          placeholder="Rating"
+          placeholder="Condition Rating"
           required
         />
+
+        <label htmlFor="location_id">Location:</label>
+        <select
+          id="location_id"
+          value={coat.location_id}
+          onChange={handleLocationChange}
+          required
+        >
+          <option value="" disabled>Select a location</option>
+          {locations.map((location) => (
+            <option key={location.id} value={location.id}>
+              {location.name}
+            </option>
+          ))}
+        </select>
 
         <label htmlFor="image_url">Image URL:</label>
         <input
