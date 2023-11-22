@@ -5,9 +5,10 @@ const Home = () => {
     <div className="Home">
 
       <div className="home-container">
-        <h2>Want A Coat 👋!</h2>
+        <h2>-You Donate A Coat, Someome Gets A Coat!</h2>
+        <br />
         <h3>
-          Welcome To The COATS 2 COATS App!
+          Welcome To The COAT 2 COAT App!
         </h3>
       </div>
     </div>
