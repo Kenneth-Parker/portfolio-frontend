@@ -1,77 +1,9 @@
-// // Index.jsx
-
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import "./Index.css";
-
-// const API = import.meta.env.VITE_APP_URL;
-
-// function DisplayCoats({ coats }) {
-//   return (
-//     <div className="coats-grid">
-//       {coats.map((coat) => (
-//         <div key={coat.id} className="coat-item">
-//           <Link to={`/coats/${coat.id}`}>
-          
-//           {coat.name}: {coat.is_available ? "✅" : "Unavailable"}
-          
-//           <br /><br />
-//             <img
-//               src={coat.image_url}
-//               alt="coat Image"
-//               className="coat-image"
-//             />
-//             <br /> 
-//           </Link>
-//           <br />
-//           Location: <br />
-//           {coat.city}, {coat.state}
-//           <br /><br />
-//           <Link to={`/coats/${coat.id}`}>
-//             <button className='view-coat'>View Coat</button>
-//           </Link>
-//           <br />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-// function Index() {
-//   const [coats, setCoats] = useState([]);
-
-//   useEffect(() => {
-//     async function fetchData() {
-//       try {
-//         const response = await fetch(`${API}/coats/all`);
-//         if (!response.ok) {
-//           throw new Error('Failed to fetch data');
-//         }
-//         const data = await response.json();
-//         setCoats(data);
-//       } catch (error) {
-//         console.error(error);
-//       }
-//     }
-
-//     fetchData();
-//   }, []);
-
-//   return (
-//     <div className="Index">
-//       <DisplayCoats coats={coats} />
-//     </div>
-//   );
-// }
-
-// export default Index;
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Index.css';
 
 const API = import.meta.env.VITE_APP_URL;
-const ITEMS_PER_PAGE = 6; // Number of items to display per page
+const ITEMS_PER_PAGE = 6;
 
 function DisplayCoats({ coats }) {
   return (
@@ -137,7 +69,7 @@ function Index() {
       />
 
       <DisplayCoats coats={currentCoats} />
-      
+
       <Pagination
         itemsPerPage={ITEMS_PER_PAGE}
         totalItems={coats.length}
