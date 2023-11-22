@@ -1,10 +1,77 @@
-// Index.jsx
+// // Index.jsx
+
+// import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import "./Index.css";
+
+// const API = import.meta.env.VITE_APP_URL;
+
+// function DisplayCoats({ coats }) {
+//   return (
+//     <div className="coats-grid">
+//       {coats.map((coat) => (
+//         <div key={coat.id} className="coat-item">
+//           <Link to={`/coats/${coat.id}`}>
+          
+//           {coat.name}: {coat.is_available ? "✅" : "Unavailable"}
+          
+//           <br /><br />
+//             <img
+//               src={coat.image_url}
+//               alt="coat Image"
+//               className="coat-image"
+//             />
+//             <br /> 
+//           </Link>
+//           <br />
+//           Location: <br />
+//           {coat.city}, {coat.state}
+//           <br /><br />
+//           <Link to={`/coats/${coat.id}`}>
+//             <button className='view-coat'>View Coat</button>
+//           </Link>
+//           <br />
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+// function Index() {
+//   const [coats, setCoats] = useState([]);
+
+//   useEffect(() => {
+//     async function fetchData() {
+//       try {
+//         const response = await fetch(`${API}/coats/all`);
+//         if (!response.ok) {
+//           throw new Error('Failed to fetch data');
+//         }
+//         const data = await response.json();
+//         setCoats(data);
+//       } catch (error) {
+//         console.error(error);
+//       }
+//     }
+
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <div className="Index">
+//       <DisplayCoats coats={coats} />
+//     </div>
+//   );
+// }
+
+// export default Index;
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import "./Index.css";
+import './Index.css';
 
 const API = import.meta.env.VITE_APP_URL;
+const ITEMS_PER_PAGE = 6; // Number of items to display per page
 
 function DisplayCoats({ coats }) {
   return (
@@ -12,18 +79,19 @@ function DisplayCoats({ coats }) {
       {coats.map((coat) => (
         <div key={coat.id} className="coat-item">
           <Link to={`/coats/${coat.id}`}>
-            <img
-              src={coat.image_url}
-              alt="coat Image"
-              className="coat-image"
-            />
-            <br /> {coat.name}: {coat.is_available ? "✅" : null}
+            {coat.name}: {coat.is_available ? '✅' : 'Unavailable'}
+            <br />
+            <br />
+            <img src={coat.image_url} alt="coat Image" className="coat-image" />
+            <br />
           </Link>
           <br />
+          Location: <br />
           {coat.city}, {coat.state}
-          <br /><br />
+          <br />
+          <br />
           <Link to={`/coats/${coat.id}`}>
-            <button className='view-coat'>View Coat</button>
+            <button className="view-coat">View Coat</button>
           </Link>
           <br />
         </div>
@@ -34,6 +102,7 @@ function DisplayCoats({ coats }) {
 
 function Index() {
   const [coats, setCoats] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     async function fetchData() {
@@ -52,11 +121,53 @@ function Index() {
     fetchData();
   }, []);
 
+  // Calculate the range of coats to display based on the current page
+  const indexOfLastCoat = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstCoat = indexOfLastCoat - ITEMS_PER_PAGE;
+  const currentCoats = coats.slice(indexOfFirstCoat, indexOfLastCoat);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="Index">
-      <DisplayCoats coats={coats} />
+       <Pagination
+        itemsPerPage={ITEMS_PER_PAGE}
+        totalItems={coats.length}
+        paginate={paginate}
+      />
+
+      <DisplayCoats coats={currentCoats} />
+      
+      <Pagination
+        itemsPerPage={ITEMS_PER_PAGE}
+        totalItems={coats.length}
+        paginate={paginate}
+      />
     </div>
   );
 }
+
+// Pagination component
+const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav>
+      <ul className="pagination">
+        {pageNumbers.map((number) => (
+          <li key={number} className="page-item">
+            <button onClick={() => paginate(number)} className="page-link">
+              {number}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 export default Index;
