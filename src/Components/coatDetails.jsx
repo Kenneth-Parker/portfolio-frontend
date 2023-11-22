@@ -59,23 +59,25 @@ const CoatDetails = () => {
 
   return (
     <div className="coat-details">
-        <>
-          <h3>{coats.is_available ? "✅" : null} {coats.name}</h3>
-          <img
-            src={coats.image_url}
-            alt="coats Image"
-            style={{ width: '475px', height: 'auto' }}
-          />
-          <p>Brand: {coats.brand}</p>
-          <p>Type: {coats.type}</p>
-          <p>Size: {coats.size}</p>
-          <p>Condition: {coats.condition_rating}</p>
-          <div>
-            <Link to={`/coats`}><button>Back</button></Link>
-            <Link to={`/coats/${id}/edit`}><button>Edit</button></Link>
-            <button onClick={handleDelete}>Delete</button>
-          </div>
-        </>
+      <>
+        <h3>{coats.is_available ? "✅" : null} {coats.name}</h3>
+        <img
+          src={coats.image_url}
+          alt="coats Image"
+          style={{ width: '475px', height: 'auto' }}
+        />
+        <p>Brand: {coats.brand}</p>
+        <p>Type: {coats.type}</p>
+        <p>Size: {coats.size}</p>
+        <p>Condition: {coats.condition_rating}</p>
+        <br />
+        <p>Located: {coats.city}, {coats.state} {coats.zip_code}</p>
+        <div>
+          <Link to={`/coats`}><button>Back</button></Link>
+          <Link to={`/coats/${id}/edit`}><button>Edit</button></Link>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
+      </>
     </div>
   );
 }
