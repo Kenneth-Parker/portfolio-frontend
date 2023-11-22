@@ -3,7 +3,7 @@ import './Show.css';
 
 function Show() {
   return (
-    <div>
+    <div className="show">
     <CoatDetails />
     </div>
   );

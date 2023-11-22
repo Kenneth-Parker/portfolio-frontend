@@ -1,8 +1,10 @@
 import CoatNewForm from "../Components/CoatNewForm";
+import './New.css';
+
 
 function New() {
   return (
-    <div>
+    <div className="new-form">
       <CoatNewForm />
     </div>
   );
