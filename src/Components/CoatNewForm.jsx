@@ -14,7 +14,7 @@ function CoatNewForm() {
     is_available: true,
     condition_rating: 5,
     image_url: "",
-    location_id: "", 
+    location_id: "",
   });
 
   const [locations, setLocations] = useState([]);
@@ -40,7 +40,7 @@ function CoatNewForm() {
     };
 
     try {
-      fetch(`${API}/coats/all`, {
+      fetch(`${API}/coats/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -143,19 +143,16 @@ function CoatNewForm() {
           required
         />
 
-        <label htmlFor="location_id">Location:</label>
+        <label htmlFor="location_id">Location Code:</label>
         <select
           id="location_id"
           value={coat.location_id}
-          onChange={handleLocationChange}
+          onChange={handleTextChange}
           required
         >
-          <option value="" disabled>Select a location</option>
-          {locations.map((location) => (
-            <option key={location.id} value={location.id}>
-              {location.name}
-            </option>
-          ))}
+          <option value="1">New York, NY</option>
+          <option value="2">Bronx, NY</option>
+          <option value="3">Brooklyn, NY</option>
         </select>
 
         <label htmlFor="image_url">Image URL:</label>

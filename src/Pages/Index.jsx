@@ -17,11 +17,14 @@ function DisplayCoats({ coats }) {
               alt="coat Image"
               className="coat-image"
             />
-            <br /> {coat.name}: {coat.is_available ? "✅" : null} 
+            <br /> {coat.name}: {coat.is_available ? "✅" : null}
           </Link>
           <br />
           {coat.city}, {coat.state}
-          <br />
+          <br /><br />
+          <Link to={`/coats/${coat.id}`}>
+            <button className='view-coat'>View Coat</button>
+          </Link>
           <br />
         </div>
       ))}

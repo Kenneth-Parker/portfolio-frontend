@@ -14,7 +14,7 @@ function CoatEditForm() {
     type: "",
     size: "",
     is_used: false,
-    is_available: true,
+    is_available: false,
     condition_rating: 5,
     image_url: "",
     location_id: "",
@@ -29,6 +29,10 @@ function CoatEditForm() {
   const handleCheckboxChange = () => {
     setCoat({ ...coat, is_used: !coat.is_used });
   };
+  const handleCheckbox = () => {
+    setCoat({ ...coat, is_available: !coat.is_available });
+  };
+
 
   const handleLocationChange = (event) => {
     setCoat({ ...coat, location_id: event.target.value });
@@ -56,9 +60,19 @@ function CoatEditForm() {
       .then((res) => setCoat(res));
 
     // Fetch Locations Data
+    //   fetch(`${API}/locations`)
+    //     .then((res) => res.json())
+    //     .then((res) => setLocations(res));
+    // }, [id]);
     fetch(`${API}/locations`)
       .then((res) => res.json())
-      .then((res) => setLocations(res));
+      .then((res) => {
+        console.log(res); // Log the response to check its content
+        setLocations(res);
+      })
+      .catch((error) => {
+        console.error("Error fetching locations:", error);
+      });
   }, [id]);
 
   const handleSubmit = (event) => {
@@ -122,7 +136,7 @@ function CoatEditForm() {
         <input
           id="is_available"
           type="checkbox"
-          onChange={handleCheckboxChange}
+          onChange={handleCheckbox}
           checked={coat.is_available}
         />
 
@@ -138,21 +152,17 @@ function CoatEditForm() {
           placeholder="Condition Rating"
           required
         />
-
-        <label htmlFor="location_id">Location:</label>
+        <label htmlFor="location_id">Location Code:</label>
         <select
           id="location_id"
           value={coat.location_id}
-          onChange={handleLocationChange} 
+          onChange={handleTextChange}
           required
         >
-          {locations.map((location) => (
-            <option key={location.id} value={location.id}>
-              {location.name}
-            </option>
-          ))}
+          <option value="1">New York, NY</option>
+          <option value="2">Bronx, NY</option>
+          <option value="3">Brooklyn, NY</option>
         </select>
-
         <label htmlFor="image_url">Image URL:</label>
         <input
           id="image_url"

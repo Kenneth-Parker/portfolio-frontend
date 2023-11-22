@@ -5,35 +5,53 @@
     background-color: rgba(137, 43, 226, 0.22);
     background: url('../assets/bluevioletbckgrnd.png') center fixed;
     background-color: rgba(138, 43, 227, 0.557);
-  }
-  
-  .coats-grid {
+}
+
+.coats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-  
-  .coat-item {
+}
+
+.coat-item {
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 8px;
-  }
-  
-  .coat-image {
-    max-width: 100%;
+}
+
+.coat-image {
+    max-width: 122px;
     height: auto;
     border-radius: 4px;
-  }
-  
-  Link,
-  a {
+    display: block;
+    margin: 0 auto;
+}
+
+Link,
+a {
     text-decoration: none;
     color: #ffffff;
+    font-size: 1.2em;
     font-weight: bold;
-  }
-  
-  Link:hover,
+}
+
+
+.view-coat{
+    background-color: #20f026;
+    padding: 0.2em .5em;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.view-coat:hover {
+        color: yellow;
+}
+/* Link:hover,
   a:hover {
     color: #20f026;
-  }
-  
+  } */
