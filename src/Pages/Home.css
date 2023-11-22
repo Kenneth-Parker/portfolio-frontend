@@ -3,32 +3,24 @@
 
 .Home {
     height: 100vh;
-    /* Make the container take up the full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    /* Set the text color to white, assuming your background will be dark */
     background: url('../assets/fullImageBckgndwLogo.png') center fixed;
-    /* Add your image path here */
     background-color: rgba(138, 43, 227, 0.557);
-        /* Add a semi-transparent background color */
 }
 
 h2 {
     font-size: 3em;
-    /* Adjust the font size for the heading */
     margin-bottom: 10px;
-    /* Add some space below the heading */
 }
 
 h3 {
     font-size: 1.5em;
-    /* Adjust the font size for the subheading */
     margin-top: 10px;
-    /* Add some space above the subheading */
 }
 
 

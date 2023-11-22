@@ -1,0 +1,39 @@
+/* Index.css */
+
+.Index {
+    padding: 20px;
+    background-color: rgba(137, 43, 226, 0.22);
+    background: url('../assets/bluevioletbckgrnd.png') center fixed;
+    background-color: rgba(138, 43, 227, 0.557);
+  }
+  
+  .coats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .coat-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .coat-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  Link,
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  Link:hover,
+  a:hover {
+    color: #20f026;
+  }
+  

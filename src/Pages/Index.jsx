@@ -1,32 +1,30 @@
+// Index.jsx
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import "./Index.css"
+import "./Index.css";
 
 const API = import.meta.env.VITE_APP_URL;
 
-
 function DisplayCoats({ coats }) {
   return (
-    <div>
-
-      <ul>
-        {coats.map((coat) => (
-          <li key={coat.id}>
-            <Link to={`/coats/${coat.id}`}>
-              <img
-                src={coat.image_url}
-                alt="coat Image"
-                style={{ width: '75px', height: 'auto' }}
-              />
-              <br />  {coat.name}: {coat.is_available ? "✅" : null} 
-            </Link>
-            <br />
-            {coat.city},{coat.state}
-            <br />
-            <br />
-          </li>
-        ))}
-      </ul>
+    <div className="coats-grid">
+      {coats.map((coat) => (
+        <div key={coat.id} className="coat-item">
+          <Link to={`/coats/${coat.id}`}>
+            <img
+              src={coat.image_url}
+              alt="coat Image"
+              className="coat-image"
+            />
+            <br /> {coat.name}: {coat.is_available ? "✅" : null} 
+          </Link>
+          <br />
+          {coat.city}, {coat.state}
+          <br />
+          <br />
+        </div>
+      ))}
     </div>
   );
 }
