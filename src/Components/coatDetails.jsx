@@ -60,7 +60,7 @@ const CoatDetails = () => {
   return (
     <div className="coat-details">
       <>
-        <h3>{coats.is_available ? "✅" : null} {coats.name}</h3>
+        <h3>{coats.is_available ? "✅" : "❌"} {coats.name}</h3>
         <img
           src={coats.image_url}
           alt="coats Image"
