@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 import './NavBar.css';
-// import coatLogo from '../assets/coat.png';
+import coatLogo from '../assets/fullLogo.png';
 
 export default function NavBar() {
   return (
-    <nav className="grid-container">
+    <nav className="NavBar">
 
-      <h1 className="element1">
-        <Link to="/coats">- C O A T S -</Link>
-      </h1>
+      <Link to="/">
+        <img src={coatLogo} alt="Coat Logo" className="logo" />
+      </Link>
 
-      <button className="element2">
-        <Link to="/coats/new">Add New Coat</Link>
+      <button className="element1">
+        <Link to="/coats">ALL COATS</Link>
       </button>
 
+      <button className="element2">
+        <Link to="/coats/new">Donate A Coat</Link>
+      </button>
     </nav>
   );
 }

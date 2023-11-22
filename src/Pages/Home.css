@@ -1,0 +1,37 @@
+/* Home.css */
+
+
+.Home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: url('../assets/fullImageBckgndwLogo.png') center fixed;
+    background-color: rgba(138, 43, 227, 0.557);
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+
+.home-container {
+    /* border: solid 2px white;
+    border-radius: 11px; */
+    position: fixed;
+    top: 600px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* overflow: hidden; */
+    /* Prevent scrolling */
+}

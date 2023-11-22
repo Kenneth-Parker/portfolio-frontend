@@ -3,10 +3,14 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="Home">
-      <h2>Want A Coat 👋!</h2>
-      <h3>
-        Welcome To The COATS 2 COATS App!
-      </h3>
+
+      <div className="home-container">
+        <h2>-You Donate A Coat, Someome Gets A Coat!</h2>
+        <br />
+        <h3>
+          Welcome To The COAT 2 COAT App!
+        </h3>
+      </div>
     </div>
   );
 }

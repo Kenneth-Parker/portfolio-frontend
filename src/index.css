@@ -1,7 +1,14 @@
 :root {
-  color-scheme: light dark;
+color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+}
+
+a:hover {
+  color: yellow;
+}
+button {
+  background-color: #ffffff;
 }
 
 @media (prefers-color-scheme: light) {
@@ -9,12 +16,10 @@
     color: #213547;
     background-color: #ffffff;
   }
-
   a:hover {
     color: #747bff;
   }
-
   button {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
   }
 }
