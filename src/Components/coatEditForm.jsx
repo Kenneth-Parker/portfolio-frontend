@@ -60,20 +60,11 @@ function CoatEditForm() {
       .then((res) => setCoat(res));
 
     // Fetch Locations Data
-    //   fetch(`${API}/locations`)
-    //     .then((res) => res.json())
-    //     .then((res) => setLocations(res));
-    // }, [id]);
-    fetch(`${API}/locations`)
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res); // Log the response to check its content
-        setLocations(res);
-      })
-      .catch((error) => {
-        console.error("Error fetching locations:", error);
-      });
-  }, [id]);
+      fetch(`${API}/locations`)
+        .then((res) => res.json())
+        .then((res) => setLocations(res));
+    }, [id]);
+    
 
   const handleSubmit = (event) => {
     event.preventDefault();
