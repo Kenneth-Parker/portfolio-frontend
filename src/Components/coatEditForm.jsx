@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import "./coatEditForm.css"
 
 const API = import.meta.env.VITE_APP_URL;
 
@@ -166,11 +167,11 @@ function CoatEditForm() {
 
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <button className="button" type="submit">Submit</button>
       </form>
       <br />
       <Link to={`/coats/${id}`}>
-        <button>Nevermind!</button>
+        <button className="button">Nevermind!</button>
       </Link>
     </div>
   );
