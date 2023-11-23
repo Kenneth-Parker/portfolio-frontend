@@ -61,11 +61,11 @@ function CoatEditForm() {
       .then((res) => setCoat(res));
 
     // Fetch Locations Data
-      fetch(`${API}/locations`)
-        .then((res) => res.json())
-        .then((res) => setLocations(res));
-    }, [id]);
-    
+    fetch(`${API}/locations`)
+      .then((res) => res.json())
+      .then((res) => setLocations(res));
+  }, [id]);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -97,24 +97,42 @@ function CoatEditForm() {
         />
 
         <label htmlFor="type">Type:</label>
-        <input
+        <select
           id="type"
           value={coat.type}
-          type="text"
           onChange={handleTextChange}
           placeholder="Type of Coat"
           required
-        />
+        >
+          <option value="Winter Coat">Winter Coat</option>
+          <option value="Jacket">Jacket</option>
+          <option value="Trench Coat">Trench Coat</option>
+          <option value="Peacoat">Peacoat</option>
+          <option value="Parka">Parka</option>
+          <option value="Evening Coat">Evening Coat</option>
+          <option value="Denim Jacket">Denim Jacket</option>
+          <option value="Explorer Jacket">Explorer Jacket</option>
+          <option value="Leather Jacket">Leather Jacket</option>
+          <option value="Bubble">Bubble</option>
+        </select>
+
+
 
         <label htmlFor="size">Size:</label>
-        <input
+        <select
           id="size"
           value={coat.size}
-          type="text"
           onChange={handleTextChange}
-          placeholder="Size of Coat"
           required
-        />
+        >
+          <option value="Extra Small">Extra Small</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+          <option value="X-Large">X-Large</option>
+          <option value="XX-Large">XX-Large</option>
+        </select>
+
 
         <label htmlFor="is_used">Used:</label>
         <input
@@ -144,7 +162,8 @@ function CoatEditForm() {
           placeholder="Condition Rating"
           required
         />
-        <label htmlFor="location_id">Location Code:</label>
+
+        <label htmlFor="location_id">Location:</label>
         <select
           id="location_id"
           value={coat.location_id}
