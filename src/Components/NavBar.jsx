@@ -14,8 +14,12 @@ export default function NavBar() {
         <Link to="/coats">ALL COATS</Link>
       </button>
 
+      <button className="element3">
+        <Link to="/locations">LOCATIONS</Link>
+      </button>
+
       <button className="element2">
-        <Link to="/coats/new">Donate A Coat</Link>
+        <Link to="/coats/new">DONATE A COAT</Link>
       </button>
     </nav>
   );
