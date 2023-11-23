@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import"./CoatNewForm.css"
+import "./CoatNewForm.css"
 
 const API = import.meta.env.VITE_APP_URL;
 
@@ -63,9 +63,9 @@ function CoatNewForm() {
     setCoat({ ...coat, [event.target.id]: event.target.checked });
   };
 
-  const handleLocationChange = (event) => {
-    setCoat({ ...coat, location_id: event.target.value });
-  };
+  // const handleLocationChange = (event) => {
+  //   setCoat({ ...coat, location_id: event.target.value });
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -97,7 +97,7 @@ function CoatNewForm() {
           required
         />
 
-<label htmlFor="type">Type:</label>
+        <label htmlFor="type">Type:</label>
         <select
           id="type"
           value={coat.type}
@@ -153,7 +153,7 @@ function CoatNewForm() {
           id="condition_rating"
           value={coat.condition_rating}
           type="number"
-          min="0"
+          min="1"
           max="5"
           step="1"
           onChange={handleTextChange}
