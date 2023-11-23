@@ -22,7 +22,7 @@ function CoatNewForm() {
 
   useEffect(() => {
     // Fetch Locations Data
-    fetch(`${API}/locations`)
+    fetch(`${API}/coats`)
       .then((res) => res.json())
       .then((res) => setLocations(res));
   }, []);
@@ -41,7 +41,7 @@ function CoatNewForm() {
     };
 
     try {
-      fetch(`${API}/coats/`, {
+      fetch(`${API}/coats`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
