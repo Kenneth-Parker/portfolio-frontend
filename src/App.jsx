@@ -10,7 +10,7 @@ import New from "./Pages/New";
 import Show from "./Pages/Show";
 
 import NavBar from "./Components/NavBar";
-import LocIndex from "./Pages/locationsIndex";
+import LocIndex from "./Pages/LocationsIndex";
 
 function App() {
 
