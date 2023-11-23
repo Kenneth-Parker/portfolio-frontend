@@ -75,6 +75,8 @@ function CoatEditForm() {
 
   return (
     <div className="Edit">
+      <h1>COAT 2 COAT</h1>
+      <br />
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
