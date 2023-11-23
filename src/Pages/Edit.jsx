@@ -5,7 +5,7 @@ import './Edit.css';
 function Edit() {
   return (
     <div className="edit-form">
-      <h2>Edit</h2>
+      <h2>Coat Edit Form:</h2>
       <CoatEditForm />
     </div>
   );
