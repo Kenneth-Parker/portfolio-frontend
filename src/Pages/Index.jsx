@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Index.css';
+import coatDefault from "../assets/image-coming-soon-placeholder.png";
 
 const API = import.meta.env.VITE_APP_URL;
 const ITEMS_PER_PAGE = 6;
@@ -14,7 +15,12 @@ function DisplayCoats({ coats }) {
             {coat.name}: {coat.is_available ? '✅' : 'Unavailable'}
             <br />
             <br />
-            <img src={coat.image_url} alt="coat Image" className="coat-image" />
+            {/* <img src={coat.image_url} alt="coat Image" className="coat-image" /> */}
+            {coat.image_url ? (
+              <img src={coat.image_url} alt="Coat" className="coat-image" />
+            ) : (
+              <img src={coatDefault} alt="Default Coat" className="coat-image" />
+            )}
             <br />
           </Link>
           <br />
@@ -62,7 +68,7 @@ function Index() {
 
   return (
     <div className="Index">
-       <Pagination
+      <Pagination
         itemsPerPage={ITEMS_PER_PAGE}
         totalItems={coats.length}
         paginate={paginate}

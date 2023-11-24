@@ -183,7 +183,7 @@ function CoatEditForm() {
           type="text"
           onChange={handleTextChange}
           placeholder="Image URL of Coat"
-          required
+          // required
         />
 
         <br />

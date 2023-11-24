@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./coatDetails.css"
+import coatDefault from "../assets/image-coming-soon-placeholder.png";
+
 
 const API = import.meta.env.VITE_APP_URL;
 
@@ -61,15 +63,20 @@ const CoatDetails = () => {
     <div className="coat-details">
       <>
         <h3>{coats.is_available ? "✅" : "❌"} {coats.name}</h3>
-        <img
+        {coats.image_url ? (
+          <img src={coats.image_url} alt="Coat" style={{ width: '475px', height: 'auto'}} />
+        ) : (
+          <img src={coatDefault} alt="Default Coat" style={{ width: '475px', height: 'auto'}} />
+        )}
+        {/* <img
           src={coats.image_url}
           alt="coats Image"
           style={{ width: '475px', height: 'auto' }}
-        />
+        /> */}
         <p>Brand: {coats.brand}</p>
         <p>Type: {coats.type}</p>
         <p>Size: {coats.size}</p>
-        <p>Condition: {coats.condition_rating}</p>
+        <p>Condition: {coats.condition_rating} -  Used: {coats.is_used === false ? "No" : "Yes"}</p>
         <br />
         <p>Located: {coats.city}, {coats.state} {coats.zip_code}</p>
         <div>
