@@ -45,3 +45,21 @@
 .element3 a {
     color: rgb(0, 0, 0);
 }
+
+
+@media screen and (max-width: 768px) {
+    .NavBar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .element1,
+    .element2, 
+    .element3 {
+        margin: 5px 0;
+    }
+
+    .element2 {
+        margin-right: 0;
+    }
+}
