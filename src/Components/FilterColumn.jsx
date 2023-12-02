@@ -27,7 +27,7 @@ const FilterColumn = ({ applyFilter }) => {
       <h2>FILTER</h2>
       
       <label>
-        Filter by Availability:
+        Availability:
         <select
           value={selectedFilter}
           onChange={(e) => handleFilterChange(e.target.value)}
@@ -39,7 +39,7 @@ const FilterColumn = ({ applyFilter }) => {
       </label>
 
       <label>
-        Filter by Location:
+        Location:
         <select
           value={selectedLocation}
           onChange={(e) => handleLocationChange(e.target.value)}
