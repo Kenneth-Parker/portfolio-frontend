@@ -48,7 +48,7 @@ const FilterColumn = ({ applyFilter }) => {
           <option value="1">New York, NY</option>
           <option value="2">Bronx, NY</option>
           <option value="3">Brooklyn, NY</option>
-          {/* Add more location options as needed */}
+    
         </select>
       </label>
 

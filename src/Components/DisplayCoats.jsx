@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import coatDefault from "../assets/image-coming-soon-placeholder.png";
-import './DisplayCoats.css'; // Add your styling as needed
+import './DisplayCoats.css'; 
 
 const DisplayCoats = ({ coats }) => {
   return (
