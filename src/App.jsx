@@ -11,6 +11,7 @@ import Show from "./Pages/Show";
 
 import NavBar from "./Components/NavBar";
 import LocIndex from "./Pages/LocationsIndex";
+import Loc1Show from "./Pages/Loc1Show";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/coats/:id" element={<Show />} />
             <Route path="/coats/:id/edit" element={<Edit />} />
             <Route path="/locations" element={<LocIndex />} />
+            <Route path="/locations/1" element={<Loc1Show />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
