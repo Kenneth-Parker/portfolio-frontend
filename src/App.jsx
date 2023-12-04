@@ -9,6 +9,7 @@ import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
 import ContactPage from "./Pages/ContactPage";
+import About from "./Pages/About"
 
 import NavBar from "./Components/NavBar";
 import LocIndex from "./Pages/LocationsIndex";
@@ -25,10 +26,10 @@ function App() {
   return (
     <div>
       <Router>
-       <div><NavBar /></div> 
+        <div><NavBar /></div>
         <main>
           <Routes>
-          <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/coats" element={<Index />} />
             <Route path="/coats/new" element={<New />} />
             <Route path="/coats/:id" element={<Show />} />
@@ -38,10 +39,11 @@ function App() {
             <Route path="/locations/2" element={<Loc2Show />} />
             <Route path="/locations/3" element={<Loc3Show />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
-        <div><Footer /></div> 
+        <div><Footer /></div>
       </Router>
     </div>
   );
