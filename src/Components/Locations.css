@@ -1,3 +1,52 @@
+.loc-list {
+    /* border: gold solid 2px; */
+    margin: 22px;
+}
+
 .loc-list img {
     padding: 22px;
+
+    min-width: 5%;
+
+    max-width: 60%;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+}
+
+a:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: rgba(32, 240, 38, 0.2);
+    z-index: 1;
+}
+
+a img {
+    display: block;
+    /* width: 100%;
+    height: auto; */
+    transition: opacity 0.1s ease-in-out;
+}
+
+a:hover img {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+
+    .loc-list img {
+        padding: 22px;
+
+        min-width: 70%;
+
+        max-width: 80%;
+
+    }
+
 }

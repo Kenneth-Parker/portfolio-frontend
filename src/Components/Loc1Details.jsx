@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import "./coatDetails.css";
-import coatDefault from "../assets/image-coming-soon-placeholder.png";
+import "./Loc1Details.css";
+import loc1storefront from "../assets/loc1storefront.png";
+import loc1 from "../assets/loc1.png"
 
 const API = import.meta.env.VITE_APP_URL;
 
@@ -33,12 +34,25 @@ const Loc1Details = () => {
 
   return (
     <div className="loc-details">
-      <>
-        <p>Located: {locs.city}, {locs.state} {locs.zip_code}</p>
-        <div>
-          <Link to={`/locations`}><button>Back</button></Link>
-        </div>
-      </>
+      <img src={loc1storefront} alt="" />
+      <h3>Located:</h3>
+      <Link
+        to={`https://www.google.com/maps/dir//New+York,+NY/@40.7310779,-74.0836321,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c25993d079c753:0x2ed271f94121ee72!2m2!1d-74.0012312!2d40.7311072?entry=ttu`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h3>122 west 4th st <br />{locs.city}, {locs.state} {locs.zip_code}</h3>
+        <br /><br />
+
+        <h5>CLICK FOR DIRECTIONS</h5>
+        <img src={loc1} alt="location 1" width="75%" />
+
+      </Link>
+
+      <div>
+        <Link to={`/locations`}><button>Back</button></Link>
+      </div>
+
     </div>
   );
 };
