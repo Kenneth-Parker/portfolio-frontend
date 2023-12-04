@@ -11,6 +11,12 @@
     max-width: 60%;
 }
 
+.locnyc, .locbx, .locbk {
+    margin-bottom: 11px;
+    border: rgb(138, 43, 227, 0.05) solid 22px;
+    padding: 11px;
+}
+
 a {
     position: relative;
     display: inline-block;

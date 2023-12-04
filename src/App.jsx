@@ -12,6 +12,8 @@ import Show from "./Pages/Show";
 import NavBar from "./Components/NavBar";
 import LocIndex from "./Pages/LocationsIndex";
 import Loc1Show from "./Pages/Loc1Show";
+import Loc2Show from "./Pages/Loc2Show";
+import Loc3Show from "./Pages/Loc3Show";
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
             <Route path="/coats/:id/edit" element={<Edit />} />
             <Route path="/locations" element={<LocIndex />} />
             <Route path="/locations/1" element={<Loc1Show />} />
+            <Route path="/locations/2" element={<Loc2Show />} />
+            <Route path="/locations/3" element={<Loc3Show />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
