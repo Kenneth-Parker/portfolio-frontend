@@ -17,12 +17,10 @@ export default function Footer() {
       </div>
 
       <div className="">
-        <Link to="/locations">CONTACT</Link>
+        <Link to="/contact">CONTACT</Link>
       </div>
       <p>© 2023 COAT 2 COAT, Inc.</p>
-      {/* <button className="element2">
-        <Link to="/coats/new">DONATE A COAT</Link>
-      </button> */}
+
     </nav>
   );
 }

@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
+import ContactPage from "./Pages/ContactPage";
 
 import NavBar from "./Components/NavBar";
 import LocIndex from "./Pages/LocationsIndex";
@@ -36,6 +37,7 @@ function App() {
             <Route path="/locations/1" element={<Loc1Show />} />
             <Route path="/locations/2" element={<Loc2Show />} />
             <Route path="/locations/3" element={<Loc3Show />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
