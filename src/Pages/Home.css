@@ -47,7 +47,7 @@ h3 {
 
     .Home {
         /* height: 480px; */
-        background-size:contain;
+        background-size: contain;
     }
 
     .home-container {
@@ -60,6 +60,14 @@ h3 {
         bottom: 0; */
         /* overflow: hidden; */
         /* Prevent scrolling */
+    }
+
+}
+
+@media screen and (max-height: 650px) {
+
+    .Home {
+        height: 122vh;
     }
 
 }
