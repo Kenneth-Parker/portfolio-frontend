@@ -2,13 +2,14 @@
 
 
 .Home {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
     background: url('../assets/fullImageBckgndwLogo.png') center fixed;
     background-color: rgba(138, 43, 227, 0.557);
 }
@@ -34,4 +35,25 @@ h3 {
     bottom: 0;
     /* overflow: hidden; */
     /* Prevent scrolling */
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .Home {
+        height: 480px;
+    }
+
+    .home-container {
+        /* border: solid 2px white;
+        border-radius: 11px; */
+        position:static;
+        top: 600px;
+        /* left: 0;
+        right: 0;
+        bottom: 0; */
+        /* overflow: hidden; */
+        /* Prevent scrolling */
+    }
+
 }

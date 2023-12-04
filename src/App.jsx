@@ -14,6 +14,9 @@ import LocIndex from "./Pages/LocationsIndex";
 import Loc1Show from "./Pages/Loc1Show";
 import Loc2Show from "./Pages/Loc2Show";
 import Loc3Show from "./Pages/Loc3Show";
+import Footer from "./Components/Footer";
+
+
 
 function App() {
 
@@ -36,6 +39,7 @@ function App() {
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
+        <div><Footer /></div> 
       </Router>
     </div>
   );
