@@ -10,7 +10,7 @@
     text-align: center;
     color: white;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-    background: url('../assets/fullImageBckgndwLogo.png') center fixed;
+    background: url('../assets/pileofcoatswhole.PNG') center fixed;
     background-color: rgba(138, 43, 227, 0.557);
 }
 
@@ -24,15 +24,20 @@ h3 {
     margin-top: 10px;
 }
 
+.home-img {
+    /* margin-top: 110px; */
+    width: 50%;
+}
+
 
 .home-container {
     /* border: solid 2px white;
     border-radius: 11px; */
-    position: fixed;
-    top: 600px;
+    /* position: fixed;
+    top: 0px;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; */
     /* overflow: hidden; */
     /* Prevent scrolling */
 }
@@ -41,15 +46,15 @@ h3 {
 
 
     .Home {
-        height: 480px;
+        /* height: 480px; */
         background-size:contain;
     }
 
     .home-container {
         /* border: solid 2px white;
         border-radius: 11px; */
-        position:static;
-        top: 600px;
+        /* position:static;
+        top: 600px; */
         /* left: 0;
         right: 0;
         bottom: 0; */
