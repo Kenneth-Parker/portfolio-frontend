@@ -42,6 +42,7 @@ h3 {
 
     .Home {
         height: 480px;
+        background-size:contain;
     }
 
     .home-container {
