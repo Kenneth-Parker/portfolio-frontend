@@ -27,14 +27,14 @@ const FilterColumn = ({ applyFilter }) => {
       <h2>FILTER</h2>
       
       <label>
-        Availability:
+        New / Used:
         <select
           value={selectedFilter}
           onChange={(e) => handleFilterChange(e.target.value)}
         >
           <option value="">All Coats</option>
-          <option value="available">Available Coats</option>
-          <option value="unavailable">Unavailable Coats</option>
+          <option value="used">Used Coats</option>
+          <option value="new">New Coats</option>
         </select>
       </label>
 

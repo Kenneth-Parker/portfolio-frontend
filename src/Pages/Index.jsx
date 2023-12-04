@@ -33,7 +33,7 @@ function Index() {
 
   // Filter the coats based on the selected filters
   const filteredCoats = coats.filter((coat) => {
-    const isAvailableFilter = filter === '' || (filter === 'available' && coat.is_available) || (filter === 'unavailable' && !coat.is_available);
+    const isAvailableFilter = filter === '' || (filter === 'used' && coat.is_used) || (filter === 'new' && !coat.is_used);
     const isLocationFilter = locationFilter === '' || coat.location_id.toString() === locationFilter;
 
     return isAvailableFilter && isLocationFilter;
