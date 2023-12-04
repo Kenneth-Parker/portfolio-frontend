@@ -10,7 +10,7 @@ const ContactPage = () => {
             imageUrl: 'https://avatars.githubusercontent.com/u/131785555?v=4',
             linkedInLink: 'https://www.linkedin.com/in/-KennethParker',
             githubLink: 'https://github.com/Kenneth-Parker',
-            info: `As a Pursuit full stack web developer with an entrepreneurial mindset, I'm passionate contact building innovative web applications that solve real-world problems`
+            info: `As a Pursuit full stack web developer with an entrepreneurial mindset, I'm passionate about building innovative web applications that solve real-world problems`
         }
     ];
 

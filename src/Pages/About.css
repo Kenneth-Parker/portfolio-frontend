@@ -1,5 +1,6 @@
 .about-page {
     padding: 20px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
     background: url('../assets/bluevioletbckgrnd.png') center fixed;
     background-color: rgba(138, 43, 227, 0.557);
 
